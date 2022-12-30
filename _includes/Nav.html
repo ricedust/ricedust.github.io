@@ -31,19 +31,22 @@
 
 <nav class="navbar is-transparent" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
-      <a class="navbar-item" style="padding-left: 0;"; href="{{ site.baseurl }}/index.html">
-          <h6> {{site.heading}}</h6></a>
-          <script src="{{ site.baseurl }}/assets/js/modeswitcher.js"></script>
-          <script src="{{ site.baseurl }}/assets/js/Hamburger.js"></script>
+      <a class="navbar-item" style="padding-left: 0;"; href="/">
+        <h6> {{site.heading}}</h6>
+      </a>
+      <!--<script src="/assets/js/modeswitcher.js"></script>-->
+      <script src="/assets/js/Hamburger.js"></script>
+      <!--
       <div class="navbar-item navbar-dark-mode__mobile is-hidden-tablet" onclick="modeSwitcher()">
         <div class="buttons">
           <a class="button is-text">
             <span class="icon is-small">
-              <img src="{{ '/assets/img/sun.svg' | relative_url }}" id="theme-toggle-img--mobile">
+              <img src="/assets/img/sun.svg" id="theme-toggle-img--mobile">
             </span>
           </a>
         </div>
       </div>
+      -->
       <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
@@ -53,9 +56,13 @@
     
     <div id="navbarBasicExample" class="navbar-menu">
       <div class="navbar-start">
-        <a href="{{'/notes' | relative_url}}" class="navbar-item">
-          Demo Feed
+        <a href="/" class="navbar-item">
+          Home
         </a>
+        <a href="/notes" class="navbar-item">
+          Blog
+        </a>
+        <!--
         <a href="../post/how-to" class="navbar-item">
           How To
         </a>
@@ -68,17 +75,20 @@
         <a href="https://obsidian.md/"  target="_blank" class="navbar-item">
           Obsidian
         </a>
+        -->
       </div>
+      <!--
       <div class="navbar-end is-hidden-mobile" onclick="modeSwitcher()" >
         <div class="navbar-item">
           <div class="buttons">
             <a class="button is-text">
               <span class="icon is-small">
-                <img src="{{ '/assets/img/sun.svg' | relative_url }}" id="theme-toggle-img">
+                <img src="/assets/img/sun.svg" id="theme-toggle-img">
               </span>
             </a>
           </div>
         </div>
       </div>
+      -->
     </div>
   </nav>

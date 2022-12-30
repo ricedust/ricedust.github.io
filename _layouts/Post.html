@@ -28,19 +28,19 @@
 
 <head>
     <meta content="width=device-width, initial-scale=1" name="viewport" />
-    <meta content="Hiran Venugopalan" property="og:site_name" />
+    <meta content="RICEDUST" property="og:site_name" />
     <meta
-        content="Product and Type Designer | UI UX | Design Mentoring"
+        content="{{ site.content }}"
         property="og:description">
-    <meta content="{{ site.url }}/about/" property="article:author">
-    <meta property="og:image" content="../assets/img/OGImg.png">
+    <meta content="{{ site.url }}/about" property="article:author">
+    <meta property="og:image" content="/assets/img/favicon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&display=swap"
         rel="stylesheet">
     {%- if page.title -%}
     <meta content="{{ page.title }}" property="og:title">
-    <meta content="article" property="og:type">
+    <meta content="website" property="og:type">
     <meta content="{{ site.url }}{{ page.url }}" property="og:url">
     {%- else -%}
     <meta content="website" property="og:type">
@@ -50,12 +50,11 @@
     <title>{{page.title}} - {{site.heading}}</title>
     <script data-host="https://microanalytics.io" data-dnt="false" src="https://microanalytics.io/js/script.js" id="ZwSg9rf6GA" async defer></script>
     <link rel="canonical" href="{{site.url}}{{page.url}}" />
-    <link rel="apple-touch-icon" href="{{ site.baseurl }}/assets/img/profile.png">
-    <link rel="icon" href="{{ site.baseurl }}/assets/img/favicon.png" type="image/png" sizes="16x16" />
-    <link href="{{ site.baseurl }}/assets/css/style.css" rel="stylesheet" media="all" class="default" />
-    <link href="{{ site.baseurl }}/assets/css/main.css" rel="stylesheet" media="all" class="default" />
-    <link href="{{ site.baseurl }}/assets/css/Util.css" rel="stylesheet" media="all" class="default" />
-    <link href="{{ site.baseurl }}/assets/css/vendor/Katex.css" rel="stylesheet" media="all" class="default" />
+    <link rel="apple-touch-icon" href="/assets/img/favicon.png">
+    <link rel="icon" href="/assets/img/favicon.png" type="image/png" sizes="16x16" />
+    <link href="/assets/css/style.css" rel="stylesheet" media="all" class="default" />
+    <link href="/assets/css/main.css" rel="stylesheet" media="all" class="default" />
+    <link href="/assets/css/Util.css" rel="stylesheet" media="all" class="default" />
 
     <!--[if IE]>
         <link href="/assets/css/ie-target.css" rel="stylesheet" type="text/css"/>
@@ -134,7 +133,7 @@
                     {%- include Content.html -%}
                     {% for post in site.posts %}
                         <div class="list-feed"> 
-                        <a href="{{ site.baseurl }}{{post.url}}" style="text-decoration: none;display: flex;justify-content: space-between;flex-direction: row;width: 100%;">
+                        <a href="{{post.url}}" style="text-decoration: none;display: flex;justify-content: space-between;flex-direction: row;width: 100%;">
                             <div class="writinglist-title">{{post.title }}</div>
                         </a>
                         </div>
