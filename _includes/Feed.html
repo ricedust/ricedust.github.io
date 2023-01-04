@@ -52,6 +52,7 @@
             {%- if note_items.image -%}
                 <img class="image block" src="{{note_items.image}}">
             {%- endif -%}
+            <div class="has-text-grey" style="font-size: var(--text-s)">{{ note_items.date | date: "%b %d, %Y" }}</div>
             <h6>{{ note_items.title }}</h6>
             {%- if note_items.description -%}
                 <p class="excerpt">
