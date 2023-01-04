@@ -29,8 +29,21 @@
 {%- endcomment -%}
 
 {%- if site.copyright.msg != nil and site.copyright.msg != empty and site.copyright.msg != null -%}
+{%- if page.feed -%}
+<div style="text-align:center">
+    <a onclick="scrollToTop()">
+        <h5 class="meta-title">↑ Scroll to top</h5>
+    </a>
+</div>
+<script>
+    function scrollToTop() {
+        document.body.scrollIntoView({ behavior: "smooth" });
+    }
+</script>
+{%- endif -%}
 <div id="copyright">
     <p id="copyright-notice"> {{site.copyright.year}} • {{site.copyright.msg}} •
-        <a href="/credits">Credits</a> </p>
-</div> 
+        <a href="/credits">Credits</a>
+    </p>
+</div>
 {%- endif -%}
