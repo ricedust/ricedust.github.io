@@ -10,7 +10,6 @@ date: 28-12-2022
 
 The idea for this cafe came from a short instrumental track I wrote:
 {% include AudioEmbed.html src="/assets/audio/ok.wav" %}
-<br>
 After hearing it, a friend pointed out that it sounded like an upscale restaurant or cafe, so I decided to create an image to complement the music.
 
 ### Reference Images
