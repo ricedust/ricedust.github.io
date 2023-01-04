@@ -2,6 +2,8 @@
 title: How I Created a Pixel Art Cafe ☕
 feed: show
 date: 28-12-2022
+thumbnail: /assets/img/cafe.png
+excerpt: Hello
 ---
 
 ![](/assets/img/cafe.png)
@@ -87,10 +89,10 @@ This took the better part of a day to complete, and as someone who is not too ex
 
 ### [Reference Image](#reference-images) Sources
 
-1. https://www.pinterest.com/pin/3166662217143804/
-2. https://dribbble.com/shots/6400141-Smoking-Joe-s
-3. https://dribbble.com/shots/15352275-Cafe-scene-pixelart
-4. https://setamo-arts.tumblr.com/post/616639526764527616
-5. https://coffeeshopambienceshop.com/products/snow-night-on-window-at-coffee-shop-ambience-with-relaxing-smooth-jazz-music-and-snow-falling
-6. https://jpmachado.art/en/portfolio/
-7. https://lofigirl.com/blogs/releases/afternoon-jazz
+1. <https://www.pinterest.com/pin/3166662217143804>
+2. <https://dribbble.com/shots/6400141-Smoking-Joe-s>
+3. <https://dribbble.com/shots/15352275-Cafe-scene-pixelart>
+4. <https://setamo-arts.tumblr.com/post/616639526764527616>
+5. <https://coffeeshopambienceshop.com/products/snow-night-on-window-at-coffee-shop-ambience-with-relaxing-smooth-jazz-music-and-snow-falling>
+6. <https://jpmachado.art/en/portfolio/>
+7. <https://lofigirl.com/blogs/releases/afternoon-jazz>
