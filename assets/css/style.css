@@ -1297,6 +1297,11 @@ label.srs-toggle {
     display: none;
 }
 
+#scroll-to-top {
+    margin: 1rem;
+    text-align: center;
+}
+
 #copyright {
     margin: 4rem 0 1rem 0;
 }
