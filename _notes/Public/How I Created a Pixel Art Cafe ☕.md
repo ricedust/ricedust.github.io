@@ -2,8 +2,7 @@
 title: How I Created a Pixel Art Cafe ☕
 feed: show
 date: 28-12-2022
-thumbnail: /assets/img/cafe.png
-excerpt: Hello
+image: /assets/img/cafe.png
 ---
 
 ![](/assets/img/cafe.png)
@@ -19,7 +18,7 @@ After hearing it, a friend pointed out that it sounded like an upscale restauran
 My first idea was to have a girl sitting by a window, looking out at the street from inside a cafe. For reference, I immediately thought of the lofi hip-hop girl, but I also looked for images that had a good contrast between warm and cold tones to create a sense of coziness.
 
 ![](/assets/img/cafe-references.png)
-^ I've linked these images at the [bottom](#reference-image-sources) of this page.
+>I've linked these images at the [bottom](#reference-image-sources) of this page.
 
 ### Process
 

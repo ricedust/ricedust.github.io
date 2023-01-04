@@ -4,5 +4,4 @@ permalink: /notes
 feedformat: card
 title: Digital Garden 🌱
 ---
-
-##### Pages from my journal. 
+Pages from my journal. 
