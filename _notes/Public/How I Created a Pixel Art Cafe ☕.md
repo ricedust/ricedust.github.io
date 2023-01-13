@@ -2,10 +2,10 @@
 title: How I Created a Pixel Art Cafe ☕
 feed: show
 date: 28-12-2022
-image: /assets/img/cafe.png
+image: /assets/img/cafe-v8.png
 ---
 
-![](/assets/img/cafe.png)
+![](/assets/img/cafe-v8.png)
 
 ### Concept
 
@@ -78,7 +78,7 @@ I also go back and add imperfections to the shadows on the floor to reflect the 
 
 Using the light guidelines from earlier, I add some subtle light shafts. Here is the final result:
 
-![](/assets/img/cafe.png)
+![](/assets/img/cafe-v8.png)
 
 ### Final Thoughts
 
