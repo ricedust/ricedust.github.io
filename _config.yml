@@ -28,7 +28,7 @@ baseurl: ""
 # Website Header, Description, Footer year and text. 
 # If you are deleting this, make sure you remove it from HTML files too 
 heading: RICEDUST
-content: Personal Website and Blog
+content: Personal Website
 copyright:  
   year: © 2022
   msg: Contents under CC-BY-NC 
