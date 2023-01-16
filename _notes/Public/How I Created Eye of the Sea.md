@@ -6,7 +6,7 @@ image: /assets/img/eye-of-the-sea-v6.png
 ---
 
 ![](/assets/img/eye-of-the-sea-v6.png)
->You can find a timelapse [here](#timelapse).
+>You can find a short GIF preview of the entire process [here](#tldr).
 
 ### Concept
 
@@ -81,7 +81,7 @@ This was part of an effort to become more comfortable drawing human features, as
 
 On the art as a whole, it’s meant to tell a story through framing, perspective, and color. For me personally, the blue evokes a feeling of sereneness and acceptance. If I look at it for long enough, I can almost see the rest of the face beyond the canvas. 
 
-### Timelapse
+### TL;DR
 
 ![](/assets/img/eye-of-the-sea-process.gif)
 
