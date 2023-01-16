@@ -133,6 +133,16 @@
                             {%- endif -%}
                             {%- include Content.html -%}
                             {%- include Backlinks.html -%}
+                            {%- if page.feed -%}
+                            <a onclick="scrollToTop()">
+                                <h5 class="meta-title centre-title">↑ Scroll to top</h5>
+                            </a>
+                            <script>
+                                function scrollToTop() {
+                                    document.body.scrollIntoView({ behavior: "smooth" });
+                                }
+                            </script>
+                            {%- endif -%}
                         </div>
                     </div>
                     {%- endif -%}
