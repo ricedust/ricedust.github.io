@@ -51,9 +51,10 @@
     {%- assign note_items = site.notes | sort: "date" | reverse -%}
     {%- for note_items in note_items -%}
     {%- if note_items.feed == "show" -%}
-    <div onmouseenter="changeSrc(this, '{{note_items.preview}}')" 
+    <div onclick="location.href='{{note_items.url}}'"
+        onmouseenter="changeSrc(this, '{{note_items.preview}}')" 
         onmouseleave="changeSrc(this, '{{note_items.thumbnail}}')" 
-        class="notelist-feed"><a href="{{note_items.url}}">
+        class="notelist-feed">
 
         <!-- thumbnail -->
         {%- if note_items.thumbnail -%}
@@ -64,7 +65,7 @@
         <div class="has-text-grey" style="font-size: var(--text-s)">{{ note_items.date | date: "%b %d, %Y" }}</div>
 
         <!-- title -->
-        <h6>{{ note_items.title }}</h6>
+        <h6><a href="{{note_items.url}}">{{ note_items.title }}</a></h6>
 
         <!-- description/excerpt -->
         {%- if note_items.description -%}

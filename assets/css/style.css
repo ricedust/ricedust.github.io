@@ -314,6 +314,7 @@ ul ul {
     padding: 1rem;
     border-bottom: 1px solid var(--color-text-link);
     background-color: var(--color-bg-sub);
+    cursor: pointer;
 }
 
 .notelist-feed a {
