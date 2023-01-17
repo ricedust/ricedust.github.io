@@ -89,7 +89,6 @@
 
                     <!-- if there is a thumbnail, truncate excerpt to 100 chars -->
                     {%- if post[0].thumbnail -%}
-                        {%- assign thumbnail = post[0].thumbnail -%}
                         {%- assign excerpt = excerpt | truncate: 100 -%}
                     {%- endif -%}
 
