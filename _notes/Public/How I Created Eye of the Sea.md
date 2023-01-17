@@ -2,11 +2,13 @@
 title: How I Created Eye of the Sea
 feed: show
 date: 13-01-2023
-image: /assets/img/eye-of-the-sea-v6.png
+thumbnail: /assets/img/eye-of-the-sea-v6.png
+preview: /assets/img/eye-of-the-sea-process.gif
+description: I think my original intention was to create a closeup of the face, but I naturally gravitated towards the eye.
 ---
 
 ![](/assets/img/eye-of-the-sea-v6.png)
->You can find a short GIF preview of the entire process [here](#tldr).
+>You can find a GIF preview of the entire process [here](#tldr).
 
 ### Concept
 

@@ -42,31 +42,42 @@
 <script type="text/javascript" src="/assets/js/vendor/lunr.min.js"></script>
 <script src="/assets/js/search.js"></script>
 {%- endif -%}
+
+<!-- adds a gif preview to the post on hover based on frontmatter -->
+<script src="/assets/js/preview.js"></script>
+
 <!-- feed with filter-->
 <div class="related-wrapper">
-    {% assign note_items = site.notes | sort: "date" | reverse %}
-    {% for note_items in note_items %}
+    {%- assign note_items = site.notes | sort: "date" | reverse -%}
+    {%- for note_items in note_items -%}
     {%- if note_items.feed == "show" -%}
-    <div class="notelist-feed">
-        <a href="{{note_items.url}}">
-            {%- if note_items.image -%}
-                <img class="image block" src="{{note_items.image}}">
-            {%- endif -%}
-            <div class="has-text-grey" style="font-size: var(--text-s)">{{ note_items.date | date: "%b %d, %Y" }}</div>
-            <h6>{{ note_items.title }}</h6>
-            {%- if note_items.description -%}
-                <p class="excerpt">
-                    {{ note_items.description }}
-                </p>
-            {%- else -%}
-                <p class="excerpt">
-                    <!-- originally truncate: 200 -->
-                    {{ note_items.content | strip_html | strip | remove: "[[" | remove: "]]" | remove: "-" | escape |
-                    truncate: 100 }}
-                </p>
-            {%- endif -%}
-        </a>
-    </div>
+    <div onmouseenter="changeSrc(this, '{{note_items.preview}}')" 
+        onmouseleave="changeSrc(this, '{{note_items.thumbnail}}')" 
+        class="notelist-feed"><a href="{{note_items.url}}">
+
+        <!-- thumbnail -->
+        {%- if note_items.thumbnail -%}
+        <img class="image block" src="{{note_items.thumbnail}}">
+        {%- endif -%}
+
+        <!-- date -->
+        <div class="has-text-grey" style="font-size: var(--text-s)">{{ note_items.date | date: "%b %d, %Y" }}</div>
+
+        <!-- title -->
+        <h6>{{ note_items.title }}</h6>
+
+        <!-- description/excerpt -->
+        {%- if note_items.description -%}
+        <p class="excerpt">
+            {{ note_items.description | strip_html | strip | remove: "[[" | remove: "]]" | remove: "-" | escape | truncate: 100 }}
+        </p>
+        {%- else -%}
+        <p class="excerpt">
+            <!-- originally truncate: 200 -->
+            {{ note_items.content | strip_html | strip | remove: "[[" | remove: "]]" | remove: "-" | escape | truncate: 100 }}
+        </p>
+        {%- endif -%}
+    </a></div>
     {%- endif -%}
     {%- endfor -%}
 </div>

@@ -320,7 +320,7 @@ ul ul {
     color: var(--color-text-main);
 }
 
-.notelist-feed a:hover {
+.notelist-feed:hover a {
     color: var(--color-text-link);
 }
 
@@ -1133,6 +1133,10 @@ li .mn-right {
     font-size: 14px;
     font-weight: 600;
     display: inline-block;
+}
+
+.right img {
+    padding-top: 12px;
 }
 
 .right .tooltip-excerpt {

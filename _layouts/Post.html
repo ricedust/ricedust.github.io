@@ -1,3 +1,6 @@
+---
+---
+
 <!-------------------------------------------------------------------------------------
 *
 * MIT License
@@ -27,39 +30,39 @@
 <html lang="en">
 
 <head>
+    <title>{{page.title}} - {{site.heading}}</title>
+    
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta property="og:site_name" content="RICEDUST">
     <meta property="og:description" content="{{ site.content }}">
     <meta property="og:image" content="/assets/img/favicon.png">
-    <meta property="og:article:author" content="/about">
+    <meta property="article:author" content="/about">
+    {%- if page.title -%}
+    <meta property="og:title" content="{{ page.title }}">
+    {%- endif -%}
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ site.url }}{{ page.url }}">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&display=swap" rel="stylesheet">
-    {%- if page.title -%}
-    <meta property="og:title" content="{{ page.title }}">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="{{ site.url }}{{ page.url }}">
-    {%- else -%}
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="{{ site.url }}{{ page.url }}">
-    {%- endif -%}
-
-    <title>{{page.title}} - {{site.heading}}</title>
-    <script data-host="https://microanalytics.io" data-dnt="false" src="https://microanalytics.io/js/script.js"
-        id="ZwSg9rf6GA" async defer></script>
+    
     <link rel="canonical" href="{{site.url}}{{page.url}}">
     <link rel="apple-touch-icon" href="/assets/img/favicon.png">
     <link rel="icon" href="/assets/img/favicon.png" type="image/png" sizes="16x16">
+    
     <link href="/assets/css/style.css" rel="stylesheet" media="all" class="default">
     <link href="/assets/css/main.css" rel="stylesheet" media="all" class="default">
     <link href="/assets/css/Util.css" rel="stylesheet" media="all" class="default">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&display=swap" rel="stylesheet">
 
     <!--[if IE]>
         <link href="/assets/css/ie-target.css" rel="stylesheet" type="text/css"/>
     <![endif]-->
     <!--<link href="/assets/css/prism.css" rel="stylesheet" />-->
     <link rel="alternate" type="application/rss+xml" href="{{ site.url }}/feed.xml">
+
+    <script data-host="https://microanalytics.io" data-dnt="false" src="https://microanalytics.io/js/script.js"
+        id="ZwSg9rf6GA" async defer></script>
 </head>
 
 <body>
@@ -209,8 +212,6 @@
         </section>
         {%- include Footer.html -%}
     </main>
-    <!-- Makes it so anchor points do not affect URL and back button behavior -->
-    <script src="/assets/js/anchorscroller.js"></script>
 </body>
 
 </html>

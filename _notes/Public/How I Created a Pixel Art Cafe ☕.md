@@ -2,7 +2,9 @@
 title: How I Created a Pixel Art Cafe ☕
 feed: show
 date: 28-12-2022
-image: /assets/img/cafe-v8.png
+thumbnail: /assets/img/cafe-v8.png
+preview: /assets/img/cafe-process.gif
+description: The idea for this cafe came from a short instrumental track I wrote. After hearing it, a friend pointed out that it sounded like an upscale restaurant or cafe, so I decided to create an image to complement the music.
 ---
 
 ![](/assets/img/cafe-v8.png)

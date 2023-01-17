@@ -13,4 +13,4 @@ window.addEventListener("DOMContentLoaded", function(e) {
       }, false);
     })(document.getElementById(links[i].hash.replace(/#/, "")));
   }
-}, false);
+});

@@ -74,11 +74,26 @@
             {%- else -%}
                     {%- assign post = site.notes | where: 'title',title -%}
                     {%- if post[0].title == nil -%}
-                    {%- assign post = site.posts | where: 'title',title -%}
+                        {%- assign post = site.posts | where: 'title',title -%}
                     {%- endif -%}
-                    {%- assign excerpt = post[0].content | markdownify | strip_html | truncate: 200 | newline_to_br -%}
-                    {%- if site.preferences.pagepreview.enabled -%}
-                        {%- assign link_text = '<span class="tooltip"><a href="' |append: {{site.baseurl}} | append: url | append: '">' | append: title | append: '</a><span class="right bottom"><span class="tooltip-title">' | append: title | append: '</span><br/><span class="tooltip-excerpt">' | append: excerpt | remove: "[[" | remove: "]]" | append: '</span><i></i></span></span>' -%}
+                    <!-- OG: {%- assign excerpt = post[0].content | markdownify | strip_html | truncate: 200 | newline_to_br -%} -->
+                    
+                    <!-- if the post has a description, use it -->
+                    {%- if post[0].description -%}
+                        {%- assign excerpt = post[0].description -%}
+                    {%- else -%}
+                        {%- assign excerpt = post[0].content -%}
+                    {%- endif -%}
+
+                    <!-- clean up excerpt -->
+                    {%- assign excerpt = excerpt | markdownify | strip_html | strip | remove: "[[" | remove: "]]" | remove: "-" | escape | truncate: 200 -%}
+                    
+                    <!-- if the post has a thumbnail, display with image -->
+                    {%- if site.preferences.pagepreview.enabled and post[0].thumbnail -%}
+                        {%- assign link_text = '<span class="tooltip"><a href="' | append: url | append: '">' | append: title | append: '</a><span class="right bottom"><span class="tooltip-title">' | append: title | append: '</span><img class="image block" src="' | append: post[0].thumbnail | append: '"><span class="tooltip-excerpt">' | append: excerpt | append: '</span></span></span>' -%}
+                    <!-- otherwise, display without -->
+                    {%- elsif site.preferences.pagepreview.enabled -%}
+                        {%- assign link_text = '<span class="tooltip"><a href="' | append: url | append: '">' | append: title | append: '</a><span class="right bottom"><span class="tooltip-title">' | append: title | append: '</span><span class="tooltip-excerpt">' | append: excerpt | append: '</span></span></span>' -%}
                     {%- else -%}
                         {%- assign link_text = '<span><a href="' | append: url | append: '">' | append: title | append: '</a></span>' -%}
                     {%- endif -%}
@@ -156,3 +171,5 @@
         {{content}}
     {%- endif -%}
 </div>
+<!-- scroll to anchor links rather than changing the URL -->
+<script src="/assets/js/anchorscroller.js"></script>
