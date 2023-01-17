@@ -33,49 +33,57 @@
 <!--Static Page : pages/notes.md-->
 
 {%- if page.feedformat == "card" -%}
-{%- if site.preferences.search.enabled -%}
-<!-- search bar -->
-<div class="block">
-    <input class="input is-medium" type="text" placeholder="Search notes.." id="search-input" autocomplete="off">
-    <div id="search-results" class="search-results"></div>
-</div>
-<script type="text/javascript" src="/assets/js/vendor/lunr.min.js"></script>
-<script src="/assets/js/search.js"></script>
-{%- endif -%}
+
+    {%- if site.preferences.search.enabled -%}
+    <!-- search bar -->
+    <div class="block">
+        <input class="input is-medium" type="text" placeholder="Search notes.." id="search-input" autocomplete="off">
+        <div id="search-results" class="search-results"></div>
+    </div>
+    <script type="text/javascript" src="/assets/js/vendor/lunr.min.js"></script>
+    <script src="/assets/js/search.js"></script>
+    {%- endif -%}
 
 <!-- adds a gif preview to the post on hover based on frontmatter -->
 <script src="/assets/js/preview.js"></script>
 
 <!-- feed with filter-->
 <div class="related-wrapper">
-    {%- assign note_items = site.notes | sort: "date" | reverse -%}
-    {%- for note_items in note_items -%}
-    {%- if note_items.feed == "show" -%}
-    <div onclick="location.href='{{note_items.url}}'"
-        onmouseenter="changeSrc(this, '{{note_items.preview}}')" 
-        onmouseleave="changeSrc(this, '{{note_items.thumbnail}}')" 
+    {%- assign notes = site.notes | sort: "date" | reverse -%}
+    {%- for note in notes -%}
+    {%- if note.feed == "show" -%}
+    <div onclick="location.href='{{note.url}}'"
+        onmouseenter="changeSrc(this, '{{note.preview}}')" 
+        onmouseleave="changeSrc(this, '{{note.thumbnail}}')" 
         class="notelist-feed">
 
         <!-- thumbnail -->
-        {%- if note_items.thumbnail -%}
-        <img class="image block" src="{{note_items.thumbnail}}">
+        {%- if note.thumbnail -%}
+        <img class="image block" src="{{note.thumbnail}}">
         {%- endif -%}
 
         <!-- date -->
-        <div class="has-text-grey" style="font-size: var(--text-s)">{{ note_items.date | date: "%b %d, %Y" }}</div>
+        <div class="has-text-grey" style="font-size: var(--text-s)">{{ note.date | date: "%b %d, %Y" }}</div>
 
         <!-- title -->
-        <h6><a href="{{note_items.url}}">{{ note_items.title }}</a></h6>
+        <h6><a href="{{note.url}}">{{ note.title }}</a></h6>
+
+        <!-- if the post has a description, use it -->
+        {%- if post[0].description -%}
+            {%- assign excerpt = post[0].description -%}
+        {%- else -%}
+            {%- assign excerpt = post[0].content -%}
+        {%- endif -%}
 
         <!-- description/excerpt -->
-        {%- if note_items.description -%}
+        {%- if note.description -%}
         <p class="excerpt">
-            {{ note_items.description | strip_html | strip | remove: "[[" | remove: "]]" | remove: "-" | escape | truncate: 100 }}
+            {{ note.description | strip_html | strip | remove: "[[" | remove: "]]" | remove: "-" | escape | truncate: 100 }}
         </p>
         {%- else -%}
         <p class="excerpt">
             <!-- originally truncate: 200 -->
-            {{ note_items.content | strip_html | strip | remove: "[[" | remove: "]]" | remove: "-" | escape | truncate: 100 }}
+            {{ note.content | strip_html | strip | remove: "[[" | remove: "]]" | remove: "-" | escape | truncate: 100 }}
         </p>
         {%- endif -%}
     </a></div>
@@ -89,14 +97,14 @@
 
 {%- if page.feedformat == "row" -%}
 <div class="block">
-    {% assign note_items = site.notes | sort: "date" | reverse %}
-    {% for note_items in note_items %}
-    {%- if note_items.format == "list" -%}
+    {% assign notes = site.notes | sort: "date" | reverse %}
+    {% for note in notes %}
+    {%- if note.format == "list" -%}
     <div class="list-feed">
-        <a href="{{note_items.url}}"
+        <a href="{{note.url}}"
             style="text-decoration: none;display: flex;justify-content: space-between;flex-direction: row;width: 100%;">
             <div class="writinglist-title">
-                {{ note_items.title }}
+                {{ note.title }}
             </div>
         </a>
     </div>
