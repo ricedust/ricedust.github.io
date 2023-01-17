@@ -1,8 +1,7 @@
 ---
 title: Lorem Ipsum
-feed: show
+feed: hide
 date: 13-01-2023
-description:
 ---
 ### Concept
 
