@@ -69,9 +69,10 @@
             {%- for note in site.notes -%}
             {%- if note.url != page.url -%}
                 {%- if note.content contains wiki_link_title -%}
-                <div onmouseenter="changeSrc(this, '{{note.preview}}')" 
+                <div onclick="location.href='{{note_items.url}}'"
+                    onmouseenter="changeSrc(this, '{{note.preview}}')" 
                     onmouseleave="changeSrc(this, '{{note.thumbnail}}')" 
-                    class="related-group"><a href="{{ site.baseurl }}{{note.url}}">
+                    class="related-group">
 
                     <!-- thumbnail -->
                     {%- if note.thumbnail -%}
@@ -82,7 +83,7 @@
                     <div class="has-text-grey" style="font-size: var(--text-s)">{{ note.date | date: "%b %d, %Y" }}</div>
 
                     <!-- title -->
-                    <h6>{{ note.title }}</h6>
+                    <h6><a href="{{ site.baseurl }}{{note.url}}">{{ note.title }}</a></h6>
 
                     <!-- description/excerpt -->
                     {%- if note.description -%}
@@ -96,7 +97,7 @@
                         </p>
                     {%- endif -%}
                     <!-- <p class="excerpt" style="margin: 0px; color: var(--color-text-main) !important;">{{ note.content | strip_html | strip | remove: "[[" | remove: "]]" | remove: "-" | escape | truncate: 100 }}</p> -->
-                </a></div>
+                </div>
                 {%- endif -%}
             {%- endif -%}
             {%- endfor -%}
