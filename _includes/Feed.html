@@ -59,7 +59,7 @@
 
         <!-- thumbnail -->
         {%- if note.thumbnail -%}
-        <img class="image block" src="{{note.thumbnail}}">
+            <img class="image block" src="{{note.thumbnail}}">
         {%- endif -%}
 
         <!-- date -->
@@ -69,24 +69,21 @@
         <h6><a href="{{note.url}}">{{ note.title }}</a></h6>
 
         <!-- if the post has a description, use it -->
-        {%- if post[0].description -%}
-            {%- assign excerpt = post[0].description -%}
-        {%- else -%}
-            {%- assign excerpt = post[0].content -%}
+        {%- assign excerpt = note.content -%}
+        {%- if note.description -%}
+            {%- assign excerpt = note.description -%}
+        {%- endif -%}
+
+        {%- assign excerpt = excerpt | strip_html | strip | remove: "[[" | remove: "]]" | escape | truncate: 400 -%}
+
+        <!-- if there is a thumbnail, truncate to 100 chars -->
+        {%- if note.thumbnail -%}
+            {%- assign excerpt = excerpt | truncate: 100 -%}
         {%- endif -%}
 
         <!-- description/excerpt -->
-        {%- if note.description -%}
-        <p class="excerpt">
-            {{ note.description | strip_html | strip | remove: "[[" | remove: "]]" | remove: "-" | escape | truncate: 100 }}
-        </p>
-        {%- else -%}
-        <p class="excerpt">
-            <!-- originally truncate: 200 -->
-            {{ note.content | strip_html | strip | remove: "[[" | remove: "]]" | remove: "-" | escape | truncate: 100 }}
-        </p>
-        {%- endif -%}
-    </a></div>
+        <p class="excerpt">{{ excerpt }}</p>
+    </div>
     {%- endif -%}
     {%- endfor -%}
 </div>

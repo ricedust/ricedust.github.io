@@ -1089,7 +1089,7 @@ li .mn-right {
 }
 
 .tooltip .right {
-    min-width: 20vw;
+    min-width: 15vw;
     top: 50%;
     left: 100%;
     margin-left: 20px;
@@ -1133,10 +1133,6 @@ li .mn-right {
     font-size: 14px;
     font-weight: 600;
     display: inline-block;
-}
-
-.right img {
-    padding-top: 12px;
 }
 
 .right .tooltip-excerpt {

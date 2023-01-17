@@ -69,33 +69,38 @@
             {%- for note in site.notes -%}
             {%- if note.url != page.url -%}
                 {%- if note.content contains wiki_link_title -%}
-                <div onclick="location.href='{{note_items.url}}'"
+                <div onclick="location.href='{{note.url}}'"
                     onmouseenter="changeSrc(this, '{{note.preview}}')" 
                     onmouseleave="changeSrc(this, '{{note.thumbnail}}')" 
                     class="related-group">
 
                     <!-- thumbnail -->
                     {%- if note.thumbnail -%}
-                    <img class="image block" src="{{note.thumbnail}}">
+                        <img class="image block" src="{{note.thumbnail}}">
                     {%- endif -%}
 
                     <!-- date -->
                     <div class="has-text-grey" style="font-size: var(--text-s)">{{ note.date | date: "%b %d, %Y" }}</div>
 
                     <!-- title -->
-                    <h6><a href="{{ site.baseurl }}{{note.url}}">{{ note.title }}</a></h6>
+                    <h6><a href="{{note.url}}">{{ note.title }}</a></h6>
+
+                    <!-- if the post has a description, use it -->
+                    {%- assign excerpt = note.content -%}
+                    {%- if note.description -%}
+                        {%- assign excerpt = note.description -%}
+                    {%- endif -%}
+
+                    <!-- clean up excerpt -->
+                    {%- assign excerpt = excerpt | markdownify | strip_html | strip | remove: "[[" | remove: "]]" | escape | truncate: 300 -%}
+
+                    <!-- if there is a thumbnail, truncate to 100 chars -->
+                    {%- if note.thumbnail -%}
+                        {%- assign excerpt = excerpt | truncate: 100 -%}
+                    {%- endif -%}
 
                     <!-- description/excerpt -->
-                    {%- if note.description -%}
-                        <p class="excerpt">
-                            {{ note.description | markdownify | strip_html | strip | remove: "[[" | remove: "]]" | remove: "-" | escape | truncate: 100 }}
-                        </p>
-                    {%- else -%}
-                        <p class="excerpt">
-                            <!-- originally truncate: 200 -->
-                            {{ note.content | markdownify | strip_html | strip | remove: "[[" | remove: "]]" | remove: "-" | escape | truncate: 100 }}
-                        </p>
-                    {%- endif -%}
+                    <p class="excerpt">{{ excerpt }}</p>
                     <!-- <p class="excerpt" style="margin: 0px; color: var(--color-text-main) !important;">{{ note.content | strip_html | strip | remove: "[[" | remove: "]]" | remove: "-" | escape | truncate: 100 }}</p> -->
                 </div>
                 {%- endif -%}
